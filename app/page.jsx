@@ -55,7 +55,7 @@ export default function Home() {
 
     async function fetchData(currency) {
         const response = await fetch(
-            `http://127.0.0.1:8000/data?currency=${currency}`
+            `${SERVER_BASE_URL}/data?currency=${currency}`
         );
         const parseData = await response.json();
 
