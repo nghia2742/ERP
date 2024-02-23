@@ -2,6 +2,7 @@
 import { StockChart } from '@/components/Emojis';
 import TableData from '@/components/TableData';
 import Footer from '@/components/partials/Footer';
+import { SERVER_BASE_URL } from '@/constants';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -78,7 +79,7 @@ export default function Home() {
 
     async function fetchPredict(model, days) {
         const response = await fetch(
-            `http://127.0.0.1:8000/predict?model=${model}&days=${days}`
+            `${SERVER_BASE_URL}/predict?model=${model}&days=${days}`
         );
         const parseData = await response.json();
         const dataArray = [];
