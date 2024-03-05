@@ -1,2 +1,2 @@
 // export const SERVER_BASE_URL = "http://127.0.0.1:8000"
-export const SERVER_BASE_URL = "https://api-erp-3.onrender.com"
+export const SERVER_BASE_URL = "https://api-erp.onrender.com"
