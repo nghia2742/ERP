@@ -71,7 +71,7 @@ export default function Home() {
         setData(dataArray);
         setPredictedData([]);
 
-        const res = await fetch('http://127.0.0.1:8000/chart');
+        const res = await fetch(`${SERVER_BASE_URL}/chart`);
         const blob = await res.blob();
         const imageUrl = URL.createObjectURL(blob);
         setChart(imageUrl);
@@ -79,7 +79,7 @@ export default function Home() {
 
     async function fetchPredict(model, days) {
         const response = await fetch(
-            `${SERVER_BASE_URL}/predict?model=${model}&days=${days}`
+            `${SERVER_BASE_URL}/predict?model=${model}&days=${days}&currency=${currency}`
         );
         const parseData = await response.json();
         const dataArray = [];
